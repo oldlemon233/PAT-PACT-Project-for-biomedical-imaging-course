@@ -1,0 +1,129 @@
+========================================
+PAT-PACT 项目文件夹结构总结
+Project Folder Structure Summary
+========================================
+
+项目主题：基于PACT与深度学习的缺血性脑卒中半暗带自动化分割与量化评估研究
+
+========================================
+核心目录结构 (Core Directory Structure)
+========================================
+
+📦 PAT-PACT-Project-for-biomedical-imaging-course/
+│
+├── 📊 数据模块 (Data Module)
+│   └── data/
+│       ├── raw/              # 原始数据
+│       ├── processed/        # 预处理数据
+│       ├── gold_standard/    # 金标准（Ground Truth）
+│       └── simulation/       # 仿真数据
+│
+├── 🔬 任务1：仿真模块 (Simulation - Task 1)
+│   └── simulation/
+│       ├── models/           # 仿真模型定义
+│       ├── scripts/          # 执行脚本
+│       ├── configs/          # 配置文件
+│       └── results/          # 仿真结果
+│
+├── 🧠 任务2.1：重建模块 (Reconstruction - Task 2.1)
+│   └── reconstruction/
+│       ├── models/           # 重建网络模型
+│       ├── scripts/          # 训练/推理脚本
+│       ├── configs/          # 网络配置
+│       ├── checkpoints/      # 模型权重
+│       └── results/          # 重建结果
+│
+├── 🎯 任务2.2：分割模块 (Segmentation - Task 2.2)
+│   └── segmentation/
+│       ├── models/           # 分割网络模型
+│       ├── scripts/          # 训练/推理脚本
+│       ├── configs/          # 网络配置
+│       ├── checkpoints/      # 模型权重
+│       └── results/          # 分割结果
+│
+├── 📈 任务3：评估模块 (Evaluation - Task 3)
+│   └── evaluation/
+│       ├── metrics/          # 评估指标
+│       ├── scripts/          # 评估流水线
+│       ├── results/          # 评估结果
+│       └── visualizations/   # 可视化
+│
+├── 📚 文档与支持 (Documentation & Support)
+│   ├── docs/
+│   │   ├── reports/          # 项目报告
+│   │   ├── presentations/    # 演示文稿
+│   │   └── papers/           # 参考文献
+│   ├── notebooks/            # Jupyter笔记本
+│   ├── utils/                # 工具函数
+│   ├── tests/                # 单元测试
+│   ├── configs/              # 全局配置
+│   └── outputs/              # 输出文件
+│       ├── figures/          # 图表
+│       └── logs/             # 日志
+│
+└── 📋 配置文件 (Configuration Files)
+    ├── .gitignore            # Git忽略规则
+    ├── README.md             # 项目说明
+    ├── QUICKSTART.md         # 快速开始
+    └── requirements.txt      # Python依赖
+
+========================================
+统计信息 (Statistics)
+========================================
+
+总目录数 (Total Directories): 40
+总文件数 (Total Files): 55+
+README文档 (README Docs): 12
+配置文件 (Config Files): 1
+模块数量 (Modules): 5
+
+========================================
+主要特性 (Key Features)
+========================================
+
+✅ 模块化设计 - 每个任务独立目录
+✅ 完整文档 - 每个目录都有README说明
+✅ 配置管理 - 使用YAML配置文件
+✅ 版本控制 - .gitignore和.gitkeep
+✅ 开发规范 - 测试、工具、日志分离
+✅ 易于扩展 - 清晰的目录结构
+
+========================================
+工作流程 (Workflow)
+========================================
+
+阶段1: 仿真 → 生成金标准 → 模拟PACT信号
+  └─> data/simulation/ + data/gold_standard/
+
+阶段2: 重建 → 训练网络 → 生成重建图像
+  └─> reconstruction/results/
+
+阶段3: 分割 → 训练网络 → 生成分割掩码
+  └─> segmentation/results/
+
+阶段4: 评估 → 量化分析 → 生成报告
+  └─> evaluation/results/ + docs/reports/
+
+========================================
+下一步工作 (Next Steps)
+========================================
+
+1. 设置Python环境和依赖
+2. 实现仿真模块代码
+3. 构建训练数据集
+4. 设计并训练重建网络
+5. 设计并训练分割网络
+6. 实现端到端评估流水线
+7. 撰写报告和准备答辩
+
+========================================
+快速链接 (Quick Links)
+========================================
+
+主文档: README.md
+结构说明: docs/PROJECT_STRUCTURE.md
+快速开始: QUICKSTART.md
+全局配置: configs/global_config.yaml
+依赖列表: requirements.txt
+
+========================================
