@@ -1,0 +1,68 @@
+# 全局项目配置文件
+# Global Project Configuration
+
+project:
+  name: "PAT-PACT Stroke Penumbra Segmentation"
+  version: "1.0.0"
+  description: "Automated segmentation and quantitative assessment of ischemic stroke penumbra"
+
+# 数据路径配置
+# Data Paths
+paths:
+  data_root: "./data"
+  raw_data: "./data/raw"
+  processed_data: "./data/processed"
+  gold_standard: "./data/gold_standard"
+  simulation_data: "./data/simulation"
+  
+  # 模型路径
+  reconstruction_checkpoints: "./reconstruction/checkpoints"
+  segmentation_checkpoints: "./segmentation/checkpoints"
+  
+  # 输出路径
+  output_root: "./outputs"
+  figures: "./outputs/figures"
+  logs: "./outputs/logs"
+
+# 通用参数
+# General Parameters
+general:
+  random_seed: 42
+  device: "cuda"  # or "cpu"
+  num_workers: 4
+  
+# 数据参数
+# Data Parameters
+data:
+  image_size: [256, 256]
+  batch_size: 8
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+# 训练参数
+# Training Parameters
+training:
+  epochs: 100
+  learning_rate: 0.001
+  optimizer: "Adam"
+  scheduler: "ReduceLROnPlateau"
+  early_stopping_patience: 10
+  
+# 评估参数
+# Evaluation Parameters
+evaluation:
+  metrics:
+    - "dice"
+    - "iou"
+    - "hausdorff"
+    - "sensitivity"
+    - "specificity"
+  
+# 日志配置
+# Logging Configuration
+logging:
+  level: "INFO"
+  save_frequency: 10  # Save every N epochs
+  tensorboard: true
+  wandb: false
